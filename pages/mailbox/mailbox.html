@@ -4,7 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Embedded Analytics</title>
+  <title>Receiver</title>
+  <style>
+    li a:focus-within {
+      font-weight: bold;
+    }
+  </style>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -29,11 +34,11 @@
 
   <!-- Google Font -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    href="https://fonts.googleapis.com/css?family=Calibri:400,700,400italic,700italic">
 </head>
-<img src="topbanner.png" alt="Italian Trulli">
+<img src="topbannersmall.png" alt="inboxTop">
 
-<body class="hold-transition skin-blue sidebar-mini" onload="javascript:getAllMessagesForReciever('All')">
+<body class="hold-transition skin-blue sidebar-mini" onload="javascript:getAllMessagesForReciever('All')" style="background-color: beige; height: 100%">
   <script src=mailscripts.js>
     window.onload = function () { getAllMessagesForReciever('All'); };</script>
   <!-- <div class="wrapper"> -->
@@ -179,8 +184,7 @@
   <!-- </header> -->
   <!-- Left side column. contains the logo and sidebar -->
   <!-- <aside class="main-sidebar" style="display: none">
-      <!-- sidebar: style can be found in sidebar.less -->
-  <!-- <section class="sidebar">
+   <section class="sidebar">
         <div class="user-panel">
           <div class="pull-left image">
             <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
@@ -383,18 +387,18 @@
     </aside> -->
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content" style="background-color: antiquewhite">
+  <div class="content" >
 
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <!-- <section class="content-header">
       <h1>
         Embedded Analytics
       </h1>
-      <!-- <ol class="breadcrumb">
+       <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
           <li class="active">Mailbox</li>
-        </ol> -->
-    </section>
+        </ol> 
+    </section> -->
 
     <!-- Main content -->
     <section class="content">
@@ -403,7 +407,7 @@
           <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Go to Sender</a>
           <div class="box box-solid collapsed-box">
             <div class="box-header with-border">
-              <h3 class="box-title">Folders</h3>
+              <h3 class="box-title">Inbox</h3>
               <div class="box-tools">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"
                   onclick="getAllMessagesForReciever('All')"><i class="fa fa-plus"></i>
@@ -411,21 +415,20 @@
               </div>
             </div>
             <div class="box-body no-padding">
-              <ul class="nav nav-pills nav-stacked">
-
-                <li onclick="getAllMessagesForReciever('Bank account or service')"><a href="#"></i> Bank account or
+              <ul class="nav nav-pills nav-stacked" id="myulelement">
+                <li onclick="getAllMessagesForReciever('Bank account or service')" id="Bank account or service"><a href="#"></i> Bank account or
                     service</a></li>
-                <li onclick="getAllMessagesForReciever('Consumer Loan')"><a href="#"></i> Consumer Loan</a></li>
-                <li onclick="getAllMessagesForReciever('Credit card')"><a href="#"> Credit card</a></li>
-                <li onclick="getAllMessagesForReciever('Credit reporting')"><a href="#"></i> Credit reporting </a></li>
-                <li onclick="getAllMessagesForReciever('Debt collection')"><a href="#"></i> Debt collection</a></li>
-                <li onclick="getAllMessagesForReciever('Money transfers')"><a href="#"></i> Money transfers</a></li>
-                <li onclick="getAllMessagesForReciever('Mortgage')"><a href="#"></i> Mortgage</a></li>
-                <li onclick="getAllMessagesForReciever('Other financial service')"><a href="#"></i> Other financial
+                <li onclick="getAllMessagesForReciever('Consumer Loan')" id="Consumer Loan"><a href="#"></i> Consumer Loan</a></li>
+                <li onclick="getAllMessagesForReciever('Credit card')" id="Credit card"><a href="#"> Credit card</a></li>
+                <li onclick="getAllMessagesForReciever('Credit reporting')" id="Credit reporting"><a href="#"></i> Credit reporting </a></li>
+                <li onclick="getAllMessagesForReciever('Debt collection')" id="Debt collection"><a href="#"></i> Debt collection</a></li>
+                <li onclick="getAllMessagesForReciever('Money transfers')" id="Money transfers"><a href="#"></i> Money transfers</a></li>
+                <li onclick="getAllMessagesForReciever('Mortgage')" id="Mortgage"><a href="#"></i> Mortgage</a></li>
+                <li onclick="getAllMessagesForReciever('Other financial service')" id="Other financial service"><a href="#"></i> Other financial
                     service</a></li>
-                <li onclick="getAllMessagesForReciever('Payday loan')"><a href="#"></i> Payday loan</a></li>
-                <li onclick="getAllMessagesForReciever('Prepaid card')"><a href="#"></i> Prepaid card</a></li>
-                <li onclick="getAllMessagesForReciever('Student loan')"><a href="#"></i> Student loan</a></li>
+                <li onclick="getAllMessagesForReciever('Payday loan')" id="Payday loan"><a href="#"></i> Payday loan</a></li>
+                <li onclick="getAllMessagesForReciever('Prepaid card')" id="Prepaid card"><a href="#"></i> Prepaid card</a></li>
+                <li onclick="getAllMessagesForReciever('Student loan')" id="Student loan"><a href="#"></i> Student loan</a></li>
               </ul>
             </div>
             <!-- /.box-body -->
@@ -455,7 +458,7 @@
         <div class="col-md-9">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Inbox</h3>
+              <!-- <h3 class="box-title">Inbox</h3> -->
               <!-- <form>
 
                   <input type="radio"onclick="javascript:window.location.href='compose.html'" id="radioSender" name="type" value="1"> Sender<br>
@@ -475,11 +478,11 @@
                 <!-- Check all button -->
                 <!-- <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i> -->
                 </button>
-                <div class="btn-group">
+                <!-- <div class="btn-group">
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
                   <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                </div>
+                </div> -->
                 <!-- /.btn-group -->
                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                 <!-- <div class="pull-right">
@@ -506,7 +509,7 @@
                       <!-- <td><input type="checkbox"></td>
                         <td class="mailbox-star"></td> -->
                       <td class="mailbox-name"></td>
-                      <td class="mailbox-subject"
+                      <td class="mailbox-subject redirect"
                         style="white-space: nowrap; width: 420px; display: inline-block;overflow:hidden;text-overflow: ellipsis">
                       </td>
                       <td class="mailbox-date"></td>
@@ -900,6 +903,13 @@
           $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
         }
         $(this).data("clicks", !clicks);
+      });
+
+      $("#table table-hover table-striped").on("click", "tr", function () {
+        // Do something on an existent or future .dynamicElement
+        value = $(this).html();
+        console.log(value[0 ]);
+        alert("clicked")
       });
 
       //Handle starring for glyphicon and font awesome
